@@ -1,0 +1,22 @@
+.Homepage--Navigation {
+    background-color: $gr-gray;
+    width: 100%;
+    display: block;
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0;
+        height: 100px;
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
+
+.Container--Home {
+    display: flex;
+    justify-content: center;
+}

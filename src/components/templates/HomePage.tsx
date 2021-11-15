@@ -1,38 +1,20 @@
-import {
-    BrowserRouter as Router,
-    Link,
-    Route,
-    Switch
-  } from 'react-router-dom';
-  
+import { Link, Outlet } from "react-router-dom";
 
-export const HomePage = () => {
+const HomePage: React.FC = (): JSX.Element => {
     return (
-        <div className='HomePage--Container'>
-            <h1>Here is the HomePage</h1>
+        <>
 
-            <div className='Navbar--Container'>
+            <nav className="Homepage--Navigation">
                 <ul>
-                    <li>
-                        <Link to="/"> Home </Link>
-                    </li>
-                    <li>
-                        <Link to="/about"> About </Link>
-                    </li>
-                    <li>
-                        <Link to="/users"> Users </Link>
-                    </li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to='about'>About</Link></li>
+                    <li><Link to='/account/list'>Users</Link></li>
+                    <li><Link to='/account/1'>Colors</Link></li>
+                    <li><Link to='/something-else'>Shapes</Link></li>
                 </ul>
-            </div>
-
-
-            <Switch>
-                <Route path="/about">
-                    <h1>About</h1>
-                </Route>
-            </Switch>
-
-
-        </div>
+            </nav>
+            <Outlet />
+        </>
     )
 }
+export default HomePage;
