@@ -1,0 +1,11 @@
+.Invoices--Navigation {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $royal;
+    height: 33px;
+    a {
+        text-decoration: none;
+        cursor: pointer;
+    }
+}

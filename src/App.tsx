@@ -1,48 +1,25 @@
-
-import { Navigate, useRoutes } from 'react-router-dom';
-import AccountLayout from './components/templates/AccountLayout';
-import HomePage from './components/templates/HomePage';
+import { Outlet, Link } from "react-router-dom";
 import './App.scss';
-// import { Route, Switch } from 'react-router';
 
 
 // check why is not rendering other components as 404
-// only compiling in Terminal and not in VSCode -
 function App(): JSX.Element  {
 
-  const mainRoutes = {
-    path: '/',
-    element: <HomePage />,
-    children: [
-      {path: '*', element: <Navigate to='/404' />},
-      {path: '/', element: <Home />},
-      {path: '404', element: <Home404 />},
-      {path: 'users', element: <Users />},
-      {path: 'colors', element: <Colors />},
-      {path: 'shapes', element: <Shapes />},
-    ],
-  };
-
-  const accountRoutes = {
-    path: 'account',
-    element: <AccountLayout />,
-    children: [
-      {path: 'about', element: <Navigate to='/users' />},
-      {path: 'users', element: <Users />},
-      {path: 'colors', element: <Colors />},
-      {path: 'shapes', element: <Shapes />},
-    ],
-  };
-
-  const routing = useRoutes([mainRoutes, accountRoutes]);
-
-
   return (
-      <div className="Container--App">
-        { routing }
-      </div>
+      <div>
+      <h1 className="ColorfullTitle">Bookkeeper</h1>
+      <nav
+        style={{
+          borderBottom: "solid 1px",
+          paddingBottom: "1rem"
+        }}
+      >
+        <Link to="/invoices">Invoices</Link> |{" "}
+        <Link to="/expenses">Expenses</Link>
+      </nav>
+      <Outlet />
+    </div>
   );
-
 }
 
 export default App;

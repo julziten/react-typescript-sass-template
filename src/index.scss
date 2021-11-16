@@ -20,6 +20,12 @@ code {
 @import './styles/utilities/mixins';
 @import './styles/utilities/typography';
 
+// Global App
+@import 'styles/app';
+
 // Components
 @import 'styles/components/templates/homepage';
 @import 'styles/components/templates/wrapper';
+
+// Routes
+@import 'styles/components/routes/invoices';
