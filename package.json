@@ -18,13 +18,19 @@
   },
   "devDependencies": {
     "node-sass": "^6.0.1",
-    "sass-loader": "^12.1.0"
+    "sass-loader": "^12.1.0",
+    "@pota/cli": "^2.0.1",
+    "@pota/plop-scripts": "^1.0.0-rc.1",
+    "plop": "^3.1.1",
+    "ts-node": "^10.7.0"
   },
   "scripts": {
     "start": "HTTPS=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "plop": "pota plop && npm run format",
+    "format": "prettier \"**/*.{js,jsx,ts,tsx,scss,md}\" --write --loglevel warn"
   },
   "eslintConfig": {
     "extends": [
@@ -43,5 +49,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "pota": "@pota/plop-scripts"
 }

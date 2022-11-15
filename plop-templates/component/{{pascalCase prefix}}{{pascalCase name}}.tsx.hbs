@@ -1,0 +1,37 @@
+{{#if useForwardRef}}
+import { ReactElement } from 'react';
+{{else}}
+import { ReactElement, useRef } from 'react';
+{{/if}}
+{{#if useForwardRef}}
+import { ensuredForwardRef } from '{{root}}../transition-component/lib/ensuredForwardRef';
+{{/if}}
+import { setupTransitionInTimeline } from './{{pascalCase prefix}}{{pascalCase name}}.transitions';
+import styles from './{{pascalCase prefix}}{{pascalCase name}}.module.scss';
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export type {{pascalCase prefix}}{{pascalCase name}}Props = {};
+
+{{#if useForwardRef}}
+const {{pascalCase prefix}}{{pascalCase name}} = ensuredForwardRef<HTMLDivElement, {{pascalCase prefix}}{{pascalCase name}}Props>((props, elementRef):ReactElement => {
+{{else}}
+function {{pascalCase prefix}}{{pascalCase name}}({}: {{pascalCase prefix}}{{pascalCase name}}Props): ReactElement {
+{{/if}}
+
+{{#if useForwardRef}}
+{{else}}
+  const elementRef = useRef<HTMLDivElement | null>(null);
+{{/if}}
+
+  return (
+    <div className={styles.{{camelCase name}} } ref={elementRef}>
+      {{pascalCase prefix}}{{pascalCase name}}
+    </div>
+  );
+{{#if useForwardRef}}
+})
+{{else}}
+}
+{{/if}}
+
+export default {{pascalCase prefix}}{{pascalCase name}};

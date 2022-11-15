@@ -1,0 +1,13 @@
+import { Meta } from '@storybook/react';
+import { createStoryFactory } from '{{root}}../storybook-helpers/stories';
+import {{pascalCase prefix}}{{pascalCase name}} from './{{pascalCase prefix}}{{pascalCase name}}';
+import { {{camelCase name}}Props } from './{{pascalCase prefix}}{{pascalCase name}}.mocks';
+
+export default {
+  title: '{{pathname}}{{pascalCase prefix}}{{pascalCase name}}',
+  component: {{pascalCase prefix}}{{pascalCase name}},
+} as Meta;
+
+const createStory = createStoryFactory({{pascalCase prefix}}{{pascalCase name}}, {{camelCase name}}Props);
+
+export const Default = createStory();

@@ -1,0 +1,15 @@
+import { ReactElement, useRef } from 'react';
+import styles from './{{pascalCase name}}.module.scss';
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+type {{pascalCase name}}Props = {};
+
+export default function {{pascalCase name}}(props: {{pascalCase name}}Props): ReactElement {
+  const elementRef = useRef<HTMLDivElement | null>(null);
+
+  return (
+    <div className={styles.{{camelCase name}} } ref={elementRef}>
+      {{pascalCase name}}
+    </div>
+  );
+}
