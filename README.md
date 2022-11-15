@@ -14,6 +14,30 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+## Important Scripts
+
+- `yarn run dev`: Starts the development server
+- `yarn run dev:https`: Starts the https development server
+- `yarn run build`: Creates a build
+- `yarn run start`: Starts the build on a nodejs server
+- `yarn run export`: Creates a static export
+- `yarn run plop`: Creates a component or page
+
+## Component naming
+
+1. Component type prefix with a unique follow-up number.
+2. Component name. spaces in the components are replaced with a dash “-“
+
+> The segments are bound together with a dash “-“. all casings are lower case.
+
+| Component type    | Prefix | Example   |
+| ----------------- | ------ | --------- |
+| Atom              | a      | a1-borfaa |
+| Molecule          | m      | m1-barfoo |
+| Organism          | o      | o1-foofaa |
+| Content component | c      | c1-foobar |
+
+
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.\
